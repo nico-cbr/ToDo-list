@@ -35,5 +35,21 @@ const apagarTodos = ()=>{
     localStorage.clear();
     location.reload();
 }
+// Usando a função toogle que acrescenta a classe hiden caso ela esteja seleciona ou não
 
-deleteB.addEventListener('click', apagarTodos);
+
+const closeModalButton = document.querySelector('#apagar-modal');
+const modal = document.querySelector('#modal');
+const fade = document.querySelector('#fade');
+const voltar = document.querySelector('#voltar-modal')
+
+const toogleModal = ()=>{
+    modal.classList.toggle('hide');
+    fade.classList.toggle('hide');
+}
+
+[deleteB, closeModalButton, fade, voltar].forEach((el)=>{
+    el.addEventListener('click', ()=> toogleModal());
+})
+
+closeModalButton.addEventListener('click', apagarTodos);

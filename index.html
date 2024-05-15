@@ -17,6 +17,15 @@
                 <input name="todo" type="text" id="todo" placeholder="Escreva aqui...">
                 <input type="submit" value="Adicionar" id="submit">
                 <input type="button" value="apagar" id="apagar">
+                <div id="fade" class="hide"></div>
+                <div id="modal" class="hide">
+                    <div class="modal-header">
+                        <h2>Tem certeza que deseja apagar?</h2>
+                        <div class="botoes">
+                        <input type="button" value="Sim" id="apagar-modal">
+                        <input type="button" value="Não" id="voltar-modal">
+                    </div>
+                    </div>
             </form>
         </div>
         <ul id="todos"> </ul>

@@ -29,7 +29,7 @@ body{
 
 .form{
     background-color: var(--color-signal);
-    width: 60%;
+    width: 70%;
     padding: 20px;
     margin: 30px auto;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -44,12 +44,17 @@ body{
 
 ul{
     margin: 0 auto;
+    margin-top: 15px;
     color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 li:hover{
     font-size: 50px;
     margin:10px;
+    max-width: 100%;
 }
 
 
@@ -61,6 +66,7 @@ li{
     transition: 300ms;
     background-color: var(--color-signal);
     box-shadow: rgba(255, 255, 255, 0.16) 0px 1px 4px;
+    max-width: 50%;
 }
 
 #todo{
@@ -94,6 +100,11 @@ li{
     margin: 5px;
 }
 
+#apagar:hover, #submit:hover{
+    border-radius: 15px;
+    box-shadow: 6px 6px 2.5px var(--color-dark);
+}
+
 #apagar:active, #submit:active{
     box-shadow: 0px 0px var(--color-dark);
     transform: translate(3px, 3px);
@@ -109,4 +120,105 @@ li{
     .form{
         width: 30%;
     }
+}
+
+/* MODAL */
+
+
+#fade, #modal{
+    transition: .5s;
+    opacity: 1;
+}
+
+#fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+
+#modal{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    background-color: var(--color--yell);
+    border: 2px solid var(--color-dark);
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 90%;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    font-size: 25px;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5rem;
+    padding-bottom: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoes{
+    display: block;
+}
+
+#apagar-modal {
+    background-color: #fff;
+    box-shadow: 3.5px 3.5px 10px #000;
+    border-radius: 1.281rem;
+    width: 162px;
+    height: 40px;
+    border: none;/*tirando a borda do botão*/
+    font-size: 25px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: .5s;
+    color: #000;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+  
+#apagar-modal:hover{
+    box-shadow: 7px 7px 3.5px #000;
+    background-color: #f2f2f2;
+}
+
+#voltar-modal {
+    background-color: #fff;
+    box-shadow: 3.5px 3.5px 10px #000;
+    border-radius: 1.281rem;
+    width: 162px;
+    height: 40px;
+    border: none;/*tirando a borda do botão*/
+    font-size: 25px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: .5s;
+    color: #000;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+  
+#voltar-modal:hover{
+    box-shadow: 7px 7px 3.5px #000;
+    background-color: #f2f2f2;
+}
+
+#modal.hide,
+#fade.hide{
+    opacity: 0;
+    pointer-events: none;
 }
